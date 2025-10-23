@@ -104,16 +104,17 @@ print(f"Прогноз прогрессирования диабета: {predict
 ```
 
 # Структура проекта
-- diabetsRegression/
-- ├── diabetes_regression.py    # Основной скрипт
-- ├── best_diabetes_model.pkl   # Сохраненная модель
-- ├── requirements.txt          # Зависимости
-- ├── README.md                 # Документация
-- └── images/                   # Графики и визуализации
--     ├── target_distribution.png
--     ├── models_comparison.png
--     └── random_forest.png
-
+```
+diabetsRegression/
+├── diabetes_regression.py    # Основной скрипт
+├── best_diabetes_model.pkl   # Сохраненная модель
+├── requirements.txt          # Зависимости
+├── README.md                 # Документация
+└── images/                   # Графики и визуализации
+    ├── target_distribution.png
+    ├── models_comparison.png
+    └── random_forest.png
+```
 
 # Возможные улучшения
 - Добавление кросс-валидации
