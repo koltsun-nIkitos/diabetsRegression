@@ -8,48 +8,54 @@
 Используется встроенный датасет `sklearn.datasets.load_diabetes`:
 
 ### Признаки:
-**age** - возраст
-**sex** - пол
-**bmi** - индекс массы тела
-**bp** - среднее артериальное давление
-**s1-s6** - шесть различных анализов крови (tc, ldl, hdl, tch, ltg, glu)
+- **age** - возраст
+- **sex** - пол
+- **bmi** - индекс массы тела
+- **bp** - среднее артериальное давление
+- **s1-s6** - шесть различных анализов крови (tc, ldl, hdl, tch, ltg, glu)
 
 ### Целевая переменная:
-**target** - количественная мера прогрессирования диабета через год
+- **target** - количественная мера прогрессирования диабета через год
 
 ## Технологии
-**Python 3.8+**
-**pandas** - анализ и обработка данных
-**numpy** - численные вычисления
-**matplotlib** - визуализация
-**scikit-learn** - машинное обучение
-**pickle** - сериализация моделей
+- **Python 3.8+**
+- **pandas** - анализ и обработка данных
+- **numpy** - численные вычисления
+- **matplotlib** - визуализация
+- **scikit-learn** - машинное обучение
+- **pickle** - сериализация моделей
 
 ### 1. Клонирование репозитория
+```
 bash:
 git clone https://github.com/koltsun-nIkitos/diabetsRegression.git
 cd diabetsRegression
+```
 
 ### 2. Установка зависимостей 
+```
 bash:
 pip install -r requirements.txt
+```
 
 ### 3. Запуск проекта
+```
 bash:
 python diabetes_regression.py
+```
 
 
 ## Сравнение моделей:
-Модель              MAE	        MSE	        R²
-Random Forest	    42.95	    2903.58	    0.452
-Linear Regression	44.28	    3108.57	    0.414
+- Модель              MAE	        MSE	        R²
+- Random Forest	      42.95	        2903.58	    0.452
+- Linear Regression	  44.28	        3108.57	    0.414
 
 ## Важность признаков (Random Forest):
-bmi (индекс массы тела) - 0.301
-s5 (уровень глюкозы) - 0.138
-bp (артериальное давление) - 0.117
-s6 - 0.102
-s4 - 0.091
+- **bmi** (индекс массы тела) - 0.301
+- **s5** (уровень глюкозы) - 0.138
+- **bp** (артериальное давление) - 0.117
+- **s6** - 0.102
+- **s4** - 0.091
 
 # Ключевые особенности
 ## 1. Предобработка данных
@@ -58,13 +64,13 @@ s4 - 0.091
 Исследование корреляций между признаками
 
 ## 2. Модели машинного обучения
-* Linear Regression - базовая линейная модель
-* Random Forest - ансамблевый метод на основе деревьев
+- * Linear Regression - базовая линейная модель
+- * Random Forest - ансамблевый метод на основе деревьев
 
 ## 3. Оценка качества
-* MAE (Mean Absolute Error) - средняя абсолютная ошибка
-* MSE (Mean Squared Error) - средняя квадратичная ошибка
-* R² (R-squared) - коэффициент детерминации
+- * MAE (Mean Absolute Error) - средняя абсолютная ошибка
+- * MSE (Mean Squared Error) - средняя квадратичная ошибка
+- * R² (R-squared) - коэффициент детерминации
 
 ## 4. Сериализация модели
 Сохранение лучшей модели с помощью pickle
@@ -73,11 +79,14 @@ s4 - 0.091
 
 # Использование модели
 ## Загрузка и предсказание
+```
 import pickle
 import numpy as np
+```
 
 # Загрузка модели
-```with open('best_diabetes_model.pkl', 'rb') as f:
+```
+with open('best_diabetes_model.pkl', 'rb') as f:
     model_data = pickle.load(f)
 
 model = model_data['model']
@@ -95,19 +104,20 @@ print(f"Прогноз прогрессирования диабета: {predict
 ```
 
 # Структура проекта
-diabetsRegression/
-├── diabetes_regression.py    # Основной скрипт
-├── best_diabetes_model.pkl   # Сохраненная модель
-├── requirements.txt          # Зависимости
-├── README.md                # Документация
-└── images/                  # Графики и визуализации
-    ├── target_distribution.png
-    └── models_comparison.png
-    └── random_forest.png
+- diabetsRegression/
+- ├── diabetes_regression.py    # Основной скрипт
+- ├── best_diabetes_model.pkl   # Сохраненная модель
+- ├── requirements.txt          # Зависимости
+- ├── README.md                 # Документация
+- └── images/                   # Графики и визуализации
+-     ├── target_distribution.png
+-     ├── models_comparison.png
+-     └── random_forest.png
+
 
 # Возможные улучшения
-*Добавление кросс-валидации
-*Подбор гиперпараметров (GridSearchCV)
-*Эксперименты с другими алгоритмами (XGBoost, SVM)
-*Feature engineering
-*Создание веб-интерфейса
+- *Добавление кросс-валидации
+- *Подбор гиперпараметров (GridSearchCV)
+- *Эксперименты с другими алгоритмами (XGBoost, SVM)
+- *Feature engineering
+- *Создание веб-интерфейса
